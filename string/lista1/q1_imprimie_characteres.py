@@ -6,7 +6,6 @@ def imprimir_characteres(string_a):
     """
 
 
-
 imprimir_characteres("batata")
 """
 Resultado esperado:
