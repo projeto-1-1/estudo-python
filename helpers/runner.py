@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 from typing import List
-from chalk import chalk
+from helpers.chalk import chalk
 
 def compare(v1, v2, depth = 0):
     if v1 is None:
@@ -91,6 +91,8 @@ class TestCaseManager:
                     next = self.__cases[index+1]
                     self.pause(f"{self.__sut.__name__} - {next.id}")
         return errors
+    
+
 
 class RootTestCaseManager:
     def __init__(self, sut, test_cases):

@@ -1,4 +1,3 @@
-from chalk import chalk
 from lista1 import (
     q02_concatenar as concatenar_string,
     q03_procura_caractere as procura_caractere,
@@ -10,21 +9,23 @@ from lista1 import (
     q09_procura_string as procura_string,
     q10_busca_indices_string as busca_indices_string
 )
-from runner import TestCaseManager
+CASES = [
+    (concatenar_string, concatenar_string.concatenar_string),
+    (procura_caractere, procura_caractere.procura_caractere),
+    (pega_fatia_da_palavra, pega_fatia_da_palavra.pega_fatia_da_palavra),
+    (remove_um_caractere, remove_um_caractere.remove_um_caractere),
+    (busca_indice_caractere, busca_indice_caractere.busca_indice_caractere),
+    (remove_varios_caracteres, remove_varios_caracteres.remove_varios_caracteres),
+    (busca_indice_inicio_string, busca_indice_inicio_string.busca_indice_inicio_string),
+    (procura_string, procura_string.procura_string),
+    (busca_indices_string, busca_indices_string.busca_indices_string)
+]
+
+import sys
+sys.path.append(sys.path[0] + r"\\\\..")
+from helpers import TestCaseManager, chalk
 
 if __name__ == "__main__":
-    CASES = [
-        (concatenar_string, concatenar_string.concatenar_string),
-        (procura_caractere, procura_caractere.procura_caractere),
-        (pega_fatia_da_palavra, pega_fatia_da_palavra.pega_fatia_da_palavra),
-        (remove_um_caractere, remove_um_caractere.remove_um_caractere),
-        (busca_indice_caractere, busca_indice_caractere.busca_indice_caractere),
-        (remove_varios_caracteres, remove_varios_caracteres.remove_varios_caracteres),
-        (busca_indice_inicio_string, busca_indice_inicio_string.busca_indice_inicio_string),
-        (procura_string, procura_string.procura_string),
-        (busca_indices_string, busca_indices_string.busca_indices_string)
-    ]
-
     def get_name(module):
         return str(module.__name__).split(".").pop()
 
