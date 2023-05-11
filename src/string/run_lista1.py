@@ -23,38 +23,9 @@ CASES = [
 
 import sys
 sys.path.append(sys.path[0] + r"\\\\.." * 2)
-from src.helpers import TestCaseManager, chalk
+from src.helpers import PackageTestCaseManager
+
+package_test_case = PackageTestCaseManager(__package__, CASES)
 
 if __name__ == "__main__":
-    def get_name(module):
-        return str(module.__name__).split(".").pop()
-
-    all_errors = 0
-    for (test_case, index) in zip(CASES, range(0, len(CASES))):
-        module, sut = test_case
-
-        manager = TestCaseManager(sut).addMany(module.TEST_CASES)
-
-        name = get_name(module)
-
-        print(chalk.cyan(f"Test [{name}]:"))
-        errors = manager.run(root = sut.__name__)
-
-        all_errors = all_errors + len(errors)
-        if len(errors) == 0:
-            print(chalk.green(f">> ok"))
-            continue
-        print(chalk.cyan(f"Test [{name}]:"))
-        errors_name = str(chalk.red(", ")).join([str(chalk.magenta(error.case.id)) for error in errors])
-        print(chalk.red(f">> {len(errors)} testes finalizaram com erro, são eles:"), errors_name)
-
-        if index != (len(CASES) - 1):
-            next = get_name(CASES[index+1][0])
-            print()
-            manager.pause(f"Pressione ENTER para executar [{next}]")
-
-    print()
-    if all_errors == 0:
-        print(chalk.green("Boaa!! Nenhum erro!!"))
-    else:
-        print(chalk.red(f"Não foi dessa vez...\nAinda tem [{all_errors}] erros para serem resolvidos"))
+    package_test_case.run()
