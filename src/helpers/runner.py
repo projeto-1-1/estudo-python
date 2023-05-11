@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 from typing import List
-from helpers.chalk import chalk
+from src.helpers.chalk import chalk
 
 def compare(v1, v2, depth = 0):
     if v1 is None:

@@ -22,8 +22,8 @@ CASES = [
 ]
 
 import sys
-sys.path.append(sys.path[0] + r"\\\\..")
-from helpers import TestCaseManager, chalk
+sys.path.append(sys.path[0] + r"\\\\.." * 2)
+from src.helpers import TestCaseManager, chalk
 
 if __name__ == "__main__":
     def get_name(module):

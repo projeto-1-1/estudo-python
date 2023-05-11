@@ -47,6 +47,6 @@ TEST_CASES = [
 
 if __name__ == "__main__":
     import sys
-    sys.path.append(sys.path[0] + r"\\\\..\\\\..")
-    from helpers.runner import RootTestCaseManager
+    sys.path.append(sys.path[0] + r"\\\\.." * 3)
+    from src.helpers.runner import RootTestCaseManager
     RootTestCaseManager(busca_indices_string, TEST_CASES).run()
