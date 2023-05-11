@@ -1,20 +1,4 @@
-from collections.abc import Sequence
 from src.helpers.chalk import chalk
-
-def compare(v1, v2, depth = 0):
-    if v1 is None:
-        return v2 is None
-    if isinstance(v1, str):
-        return v1 == v2
-    if isinstance(v1, Sequence):
-        if not isinstance(v2, Sequence):
-            return False
-        if len(v1) != len(v2):
-            return False
-        for i in range(0, len(v1)):
-            return compare(v1[i], v2[i], depth + 1)
-        return True
-    return v1 == v2
 
 def stringifyValue(value):
     if isinstance(value, str):

@@ -1,5 +1,5 @@
 def contar_ocorrencias_de_todos_os_elementos_no_array(array, elementos):
-     """
+    """
     @param array: list
     @param elementos
 

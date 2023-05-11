@@ -14,7 +14,7 @@ def criar_sequencia_de_tamanho_n_com_inicio(inicio, n):
 TEST_CASES = [
     {
         "input": (0, 6),
-        "expected": [0, 1, 2, 3, 4, 5, 6]
+        "expected": [0, 1, 2, 3, 4, 5]
     },
     {
         "input": (3, 6),

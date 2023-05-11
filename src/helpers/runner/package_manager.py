@@ -4,9 +4,10 @@ from src.helpers.runner.manager import TestCaseManager
 from src.helpers.runner.utils import is_last_index_in_array
 
 class PackageTestCaseManager:
-	def __init__(self, package_name, cases: List[Tuple[Any, Any]]):
+	def __init__(self, package_name: str, cases: List[Tuple[Any, Any]]):
 		self.__name = package_name
 		self.__cases = cases
+		self.__pausable = str(package_name).count("gabarito") == 0
 
 	def __get_module_name(self, module):
 		return str(module.__name__).split(".").pop()
@@ -30,6 +31,9 @@ class PackageTestCaseManager:
 			print(chalk.cyan(f"Test [{name}]:"))
 			errors_name = str(chalk.red(", ")).join([str(chalk.magenta(error.case.id)) for error in errors])
 			print(chalk.red(f">> {len(errors)} testes finalizaram com erro, são eles:"), errors_name)
+
+			if not self.__pausable:
+				continue
 
 			next_module = self.__get_next_module(index)
 			if next_module:

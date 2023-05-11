@@ -6,20 +6,27 @@ def criar_array_de_tamanho_fixo(tamanho):
 
     @return um array qualquer com {tamanho} numero de elementos
     """
-    
+
+def checa_se_array_de_tamanho(expected_size):
+    from collections.abc import Sequence
+    def matcher(result):
+        if isinstance(result, Sequence) and len(result) == expected_size:
+            return True
+        return f"um array de tamanho {expected_size}"
+    return matcher
 
 TEST_CASES = [
     {
-        "input": (6),
-        "expected": lambda arr = []: len(arr) == 6
+        "input": [6],
+        "expected": checa_se_array_de_tamanho(6)
     },
-    {   "input": (10),
-        "expected": lambda arr = []: len(arr) == 10
+    {   "input": [10],
+        "expected": checa_se_array_de_tamanho(10)
     },
-    {   "input": (5),
-        "expected": lambda arr = []: len(arr) == 5
+    {   "input": [5],
+        "expected": checa_se_array_de_tamanho(5)
     },
-    {   "input": (0),
+    {   "input": [0],
         "expected": []
     },
 ]

@@ -11,7 +11,7 @@ def inverter_array(array):
 TEST_CASES = [
     {
         "input": [[0, 1, 2, 3, 4, 5]],
-        "expected": [5, 4, 2, 3, 1]
+        "expected": [5, 4, 3, 2, 1, 0]
     },
     {   "input": [[0, 1, 2]],
         "expected": [2, 1, 0]

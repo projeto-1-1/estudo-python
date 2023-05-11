@@ -1,5 +1,5 @@
 from lista1 import (
-    # q01__criar_array_de_tamanho_fixo as criar_array_de_tamanho_fixo,
+    q01__criar_array_de_tamanho_fixo as criar_array_de_tamanho_fixo,
     q02__obter_tamanho_do_array as obter_tamanho_do_array,
     q03__adicionar_elemento_no_final_do_array as adicionar_elemento_no_final_do_array,
     q04__adicionar_elemento_no_inicio_do_array as adicionar_elemento_no_inicio_do_array,
@@ -20,8 +20,9 @@ from lista1 import (
     q19__concatenar_dois_arrays as concatenar_dois_arrays,
     q20__encontrar_o_valor_minimo_e_maximo_no_array_de_numeros as encontrar_o_valor_minimo_e_maximo_no_array_de_numeros,
 )
+
 CASES = [
-    # (criar_array_de_tamanho_fixo, criar_array_de_tamanho_fixo.criar_array_de_tamanho_fixo),
+    (criar_array_de_tamanho_fixo, criar_array_de_tamanho_fixo.criar_array_de_tamanho_fixo),
     (obter_tamanho_do_array, obter_tamanho_do_array.obter_tamanho_do_array),
     (adicionar_elemento_no_final_do_array, adicionar_elemento_no_final_do_array.adicionar_elemento_no_final_do_array),
     (adicionar_elemento_no_inicio_do_array, adicionar_elemento_no_inicio_do_array.adicionar_elemento_no_inicio_do_array),
@@ -47,7 +48,7 @@ import sys
 sys.path.append(sys.path[0] + r"\\\\.." * 2)
 from src.helpers import PackageTestCaseManager
 
-package_test_case = PackageTestCaseManager(__package__, CASES)
+package_test_case = PackageTestCaseManager("lista1", CASES)
 
 if __name__ == "__main__":
     package_test_case.run()
