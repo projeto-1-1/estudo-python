@@ -1,0 +1,13 @@
+
+Embaralhando e Desembaralhando uma String
+
+Objetivo: Criar uma função que embaralha uma string seguindo um padrão específico, e outra função que desembaralha a string utilizando o mesmo padrão.
+
+Descrição: Crie duas funções chamadas "embaralhar" e "desembaralhar". A função "embaralhar" deve receber uma string como argumento e retornar uma nova string onde as letras da string original foram embaralhadas seguindo a seguinte regra:
+
+- O primeiro caractere permanece no lugar.
+- O último caractere permanece no lugar.
+- Os caracteres intermediários (exceto o primeiro e o último) são embaralhados de forma que o segundo caractere troca de lugar com o penúltimo, o terceiro com o antepenúltimo, e assim por diante.
+Por exemplo, a string "exemplo" deve ser embaralhada para "eomxple".
+
+Já a função "desembaralhar" deve receber uma string embaralhada seguindo o mesmo padrão e retornar a string original.
